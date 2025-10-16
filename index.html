@@ -1,203 +1,481 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Milkachakravarthi portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Milka Chakravarthi — Freelancing Hub & Mentor</title>
+  <meta name="description" content="Milka Chakravarthi — Trainer helping housewives & working professionals build digital income sources. Courses: Video Editing, Meta Ads, Canva, Web Dev, Automation Testing, Affiliate Marketing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent-pink:#E87A8A;
+      --blue:#0f4c81;
+      --dark:#07182a;
+      --muted:#566674;
+      --card:#ffffff;
+      --glass: rgba(255,255,255,0.9);
+      --radius:14px;
+      --max-w:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:linear-gradient(180deg,#f7fbff 0%, #ffffff 45%);color:var(--dark);-webkit-font-smoothing:antialiased;}
+    a{color:inherit}
+    .wrap{max-width:var(--max-w);margin:24px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{
+      width:68px;height:68px;border-radius:12px;
+      background:linear-gradient(135deg,var(--blue),var(--accent-pink));color:#fff;
+      display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;
+      box-shadow:0 8px 30px rgba(15,76,129,0.12);
+    }
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{color:var(--blue);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:10px}
+    nav a.cta{background:var(--accent-pink);color:#fff}
+    /* Intro / hero (HTML5UP style merged with modern) */
+    #intro{display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:center;padding:28px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,0.85),#fff);box-shadow:0 14px 40px rgba(15,24,34,0.06)}
+    #intro h1{font-size:30px;margin:0 0 8px 0;color:var(--blue)}
+    #intro p{color:var(--muted);margin:0 0 12px 0}
+    .actions{margin-top:12px}
+    .button{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--blue);color:#fff;text-decoration:none;font-weight:700}
+    .button.alt{background:transparent;color:var(--blue);border:2px solid rgba(15,76,129,0.12)}
+    .scrolly{cursor:pointer}
+    /* image / avatar */
+    .intro-image{display:flex;flex-direction:column;align-items:center}
+    .avatar{width:240px;height:320px;border-radius:12px;overflow:hidden;border:10px solid #fff;box-shadow:0 20px 40px rgba(15,24,34,0.08)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    /* main grid */
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:22px}
+    main{min-width:0}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 28px rgba(15,24,34,0.04)}
+    h2{margin:0 0 12px 0;font-size:20px;color:var(--dark)}
+    .muted{color:var(--muted);font-size:14px}
+    /* courses */
+    .courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .course-card{border-radius:12px;padding:14px;background:linear-gradient(180deg,#fff,#fbfcff);border:1px solid rgba(15,76,129,0.04)}
+    .course-head{display:flex;gap:12px;align-items:center}
+    .course-icon{width:46px;height:46;border-radius:10px;background:linear-gradient(135deg,var(--accent-pink),var(--blue));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
+    .course-card h3{margin:6px 0 6px 0;font-size:16px}
+    .course-card p{margin:0;color:var(--muted);font-size:14px}
+    .course-badges{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+    .badge{padding:6px 8px;border-radius:8px;background:rgba(15,76,129,0.06);font-weight:600;font-size:13px;color:var(--blue)}
+    /* mentorship */
+    .mentor-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .mentor-card{padding:14px;border-radius:12px;background:linear-gradient(180deg,#ffffff,#fbfbff);border:1px solid rgba(232,122,138,0.04)}
+    /* posts/projects */
+    .posts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .post{border-radius:12px;overflow:hidden;border:1px solid #eef3fb;background:#fff}
+    .post .image{width:100%;height:180px;object-fit:cover;display:block}
+    .post .content{padding:12px}
+    /* testimonials */
+    .test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .testimonial{padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fcfcfd);border-left:4px solid var(--accent-pink)}
+    /* sidebar */
+    aside .lead-card{position:sticky;top:28px}
+    .lead-form input,.lead-form select, .lead-form textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #eef3fb;margin-top:8px}
+    .socials{display:flex;gap:8px;align-items:center}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid rgba(15,76,129,0.08);font-weight:700;color:var(--blue)}
+    .cta-strip{margin-top:18px;padding:16px;border-radius:12px;background:linear-gradient(90deg,var(--blue),var(--accent-pink));color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    footer{margin-top:22px;padding:22px 0;color:var(--muted);font-size:14px;border-top:1px solid rgba(15,76,129,0.06)}
+    /* small screens */
+    @media (max-width:1080px){.courses-grid{grid-template-columns:repeat(2,1fr)}.posts{grid-template-columns:1fr}.grid{grid-template-columns:1fr 320px}}
+    @media (max-width:840px){
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+      #intro{grid-template-columns:1fr;gap:18px}
+      .grid{grid-template-columns:1fr}
+      .courses-grid{grid-template-columns:1fr}
+      .test-grid{grid-template-columns:1fr}
+      .mentor-grid{grid-template-columns:1fr}
+      .avatar{width:180px;height:240px}
+    }
+    /* small helper */
+    .muted-strong{color:var(--muted);font-size:15px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- header -->
+    <header>
+      <div class="brand">
+        <div class="logo">M&N</div>
+        <div>
+          <div style="font-weight:800;font-size:18px">Milka Chakravarthi</div>
+          <div class="muted" style="margin-top:4px">Trainer • Mentor • Founder, M&N Sparks</div>
+        </div>
+      </div>
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+      <nav>
+        <a href="#intro" class="scrolly">Home</a>
+        <a href="#about" class="scrolly">About</a>
+        <a href="#courses" class="scrolly">Courses</a>
+        <a href="#mentorship" class="scrolly">Mentorship</a>
+        <a href="#projects" class="scrolly">Projects</a>
+        <a href="#contact" class="cta">Book Call</a>
+      </nav>
+    </header>
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Welcome to my<br />
-						Freelancing Hub</h1>
-						<p>Transforming Ideas Into Digital Excellence!
-						Hi, I’m Milka Chakravarthi, a skilled freelancer specializing in Web Development, Python Programming, Digital Marketing, and Video Editing. With years of experience and a passion for innovation, I help businesses and individuals achieve their goals through customized, high-quality solutions.<a href="https://twitter.com/ajlkn"><a href="https://html5up.net"></a><br />
-						<a href="https://html5up.net/license"></a>.</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+    <!-- Intro / Hero (merged) -->
+    <section id="intro" aria-labelledby="intro-heading">
+      <div>
+        <h1 id="intro-heading">Welcome to my Freelancing Hub</h1>
+        <p>Transforming ideas into digital income. Hi, I’m <strong>Milka Chakravarthi</strong> — Software Engineer turned Digital Entrepreneur, Freelancing Coach, and Skill Development Trainer. I help housewives & working professionals learn high-paid digital skills (Video Editing, Meta Ads, Canva, Web Dev, Automation Testing & Affiliate Marketing) and monetize them — in Tamil, Kannada, Telugu & English.</p>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">MILKA'S HUB</a>
-					</header>
+        <div class="actions">
+          <a href="#about" class="button alt scrolly">Continue</a>
+          <a href="#book" class="button scrolly">Book Free Strategy Call</a>
+        </div>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">portfolio</a></li>
-							
-						
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.facebook.com/milka.jennifer.1/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="https://www.instagram.com/milkachakravarthi/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							
-						</ul>
-					</nav>
+        <ul style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+          <li class="pill">6-month Mentorship</li>
+          <li class="muted" style="font-size:13px">Projects, templates & lifetime community</li>
+        </ul>
+      </div>
 
-				<!-- Main -->
-					<div id="main">
+      <aside class="intro-image">
+        <!-- uses your uploaded photo: milka.jpg.jpg -->
+        <div class="avatar"><img src="milka.jpg.jpg" alt="Milka Chakravarthi"></div>
+        <div style="text-align:center;margin-top:12px">
+          <div style="font-weight:800">Milka Chakravarthi</div>
+          <div class="muted" style="font-size:13px">Trainer at Digital Billionaire • Founder, M&N Sparks</div>
+        </div>
+      </aside>
+    </section>
 
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<span class="date"></span>
-									<h2><a href="#">About Milkachakravarthi
-										 <br />
-									</a></h2>
-								
-									Hi, I’m Milka Chakravarthi — a Software Engineer turned Digital Entrepreneur, Freelancing Coach, and Skill Development Trainer with over 7 years of corporate experience in the IT industry.After facing major life challenges — losing my father, sudden marriage, financial struggles, and job loss — I chose not to give up. Instead, I rebuilt myself through the world of digital skills, freelancing, and affiliate marketing.Today, I empower housewives and working professionals to create secondary income sources from home by mastering modern digital skills that can be monetized easily and sustainably.As the founder of M & N Sparks, a clothing brand that celebrates creativity and empowerment, I believe that every individual — no matter their background — deserves the chance to build financial independence and personal growth.I teach and mentor in Tamil, Kannada, Telugu, and English, ensuring accessibility for everyone who dreams of earning online in their own language.
-Through my signature freelancing and affiliate marketing programs, I’ve helped 1000s of learners gain confidence, learn high-income skills, and start earning from home.									
-								</header>
-								<a href="#" class="image main"><img src="images/about me.jpg" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="#" class="button large">Services</a></li>
-								</ul>
-							</article>
+    <div class="grid">
+      <main>
 
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-										<span class="date"></span>
-										<h2><a href="https://github.com/chakravarthi-15/webdevelopment">Web Development<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/chakravarthi-15/webdevelopment" class="image fit"><img src="images/web development 1.jpg" alt="" /></a>
-									<p>Custom-built websites tailored to your brand.
-										Expertise in HTML, CSS, JavaScript, and modern frameworks.
-										Fully responsive, SEO-friendly designs.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/chakravarthi-15/webdevelopment" class="button">info</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date"></span>
-										<h2><a href="#">Python Programming<br />
-										</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/python image 2.jpg" alt="" /></a>
-									<p>Automating workflows and processes.
-										Data analysis and visualization solutions.
-										Custom scripts for your unique requirements.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">info</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="#">Digital Marketing<br />
-										
-									</header>
-									<a href="#" class="image fit"><img src="images/digital marketing 3.jpg" alt="" /></a>
-									<p>SEO, PPC, and social media campaigns.
-										Tailored strategies to grow your business online.
-										Analytics-driven performance optimization.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">info</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="#">Video Editing<br />
-										
-									</header>
-									<a href="#" class="image fit"><img src="images/video editing 4.jpg" alt="" /></a>
-									<p>Engaging videos for social media, YouTube, or marketing campaigns.
-										Professional editing with smooth transitions and high-quality visuals.
-										Quick turnaround for your projects.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">info</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-							
-					
+        <!-- ABOUT -->
+        <section id="about" class="card" style="margin-top:18px">
+          <h2>About Milka</h2>
+          <p class="muted">Milka Chakravarthi is a Software Engineer turned Digital Skills Trainer, Freelancing Coach and Entrepreneur with 7+ years of experience in corporate IT (Automation Testing, Java, Web Development). After facing personal and financial challenges, Milka rebuilt her life through freelancing and digital businesses. Today she mentors housewives and working professionals to build reliable secondary income streams through practical skills, client projects and growth strategies.</p>
 
-					</div>
+          <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+            <div class="card" style="padding:12px;min-width:140px">
+              <div style="font-weight:800">7+ years</div>
+              <div class="muted" style="font-size:13px">Experience in IT</div>
+            </div>
+            <div class="card" style="padding:12px;min-width:140px">
+              <div style="font-weight:800">1000+</div>
+              <div class="muted" style="font-size:13px">Students mentored</div>
+            </div>
+            <div class="card" style="padding:12px;min-width:140px">
+              <div style="font-weight:800">Multilingual</div>
+              <div class="muted" style="font-size:13px">Tamil • Kannada • Telugu • English</div>
+            </div>
+          </div>
+        </section>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>Bengaluru<br />
-								India</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(829) 717-3591</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">lakkumilka0@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="UCX_u_YzZyV2hhoAWr9BaAJg" class="icon brands alt fa-youtube"><span class="label">youtube</span></a></li>
-									<li><a href="https://www.facebook.com/milka.jennifer.1/" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="https://www.instagram.com/milkachakravarthi/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-									
-								</ul>
-							</section>
-						</section>
-					</footer>
+        <!-- COURSES -->
+        <section id="courses" class="card" style="margin-top:18px">
+          <h2>Courses — Learn & Monetize</h2>
+          <p class="muted">Hands-on courses with projects, client-ready templates, weekly live Q&A and lifetime community access. Choose the skill that fits you and start earning.</p>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
+          <div class="courses-grid" style="margin-top:14px">
+            <!-- Video Editing -->
+            <div class="course-card">
+              <div class="course-head">
+                <div class="course-icon">VE</div>
+                <div>
+                  <h3>Video Editing Masterclass</h3>
+                  <p class="muted">Filmora + Canva workflow — Reels, Shorts, YouTube edits and client projects that convert views into income.</p>
+                </div>
+              </div>
+              <div class="course-badges">
+                <span class="badge">Reel Templates</span>
+                <span class="badge">Editing Workflow</span>
+              </div>
+            </div>
 
-			</div>
+            <!-- Meta Ads -->
+            <div class="course-card">
+              <div class="course-head">
+                <div class="course-icon">MA</div>
+                <div>
+                  <h3>Meta Ads & Funnel Strategy</h3>
+                  <p class="muted">Create high-ROI Facebook & Instagram ads, build funnels, creatives & audiences for scalable client campaigns.</p>
+                </div>
+              </div>
+              <div class="course-badges">
+                <span class="badge">Ad Setup</span>
+                <span class="badge">Scaling</span>
+              </div>
+            </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+            <!-- Canva -->
+            <div class="course-card">
+              <div class="course-head">
+                <div class="course-icon">CD</div>
+                <div>
+                  <h3>Canva Design Mastery</h3>
+                  <p class="muted">Branding, social creatives, logos & editable templates — sell design retainer packages to clients.</p>
+                </div>
+              </div>
+              <div class="course-badges">
+                <span class="badge">Brand Kits</span>
+                <span class="badge">Client Gigs</span>
+              </div>
+            </div>
 
-	</body>
+            <!-- Affiliate Marketing -->
+            <div class="course-card">
+              <div class="course-head">
+                <div class="course-icon">AF</div>
+                <div>
+                  <h3>Affiliate Marketing</h3>
+                  <p class="muted">Content funnels, conversion-driven promos & evergreen systems to earn passive commissions.</p>
+                </div>
+              </div>
+              <div class="course-badges">
+                <span class="badge">Funnels</span>
+                <span class="badge">Content</span>
+              </div>
+            </div>
+
+            <!-- Web Development -->
+            <div class="course-card">
+              <div class="course-head">
+                <div class="course-icon">WD</div>
+                <div>
+                  <h3>Web Development</h3>
+                  <p class="muted">HTML, CSS, JavaScript — build landing pages and websites you can sell as freelance gigs.</p>
+                </div>
+              </div>
+              <div class="course-badges">
+                <span class="badge">Portfolio</span>
+                <span class="badge">Projects</span>
+              </div>
+            </div>
+
+            <!-- Automation Testing -->
+            <div class="course-card">
+              <div class="course-head">
+                <div class="course-icon">AT</div>
+                <div>
+                  <h3>Automation Testing</h3>
+                  <p class="muted">Selenium, frameworks & industry workflows — transition to tech roles or freelance testing projects.</p>
+                </div>
+              </div>
+              <div class="course-badges">
+                <span class="badge">Frameworks</span>
+                <span class="badge">Real Projects</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- MENTORSHIP -->
+        <section id="mentorship" class="card" style="margin-top:18px">
+          <h2>Personal Mentorship — 6 Months</h2>
+          <p class="muted">A structured, high-touch program combining 1:1 calls, group coaching, portfolio reviews and client-acquisition blueprints.</p>
+
+          <div class="mentor-grid" style="margin-top:12px">
+            <div class="mentor-card">
+              <h3 style="margin-top:0">1:1 Mentorship</h3>
+              <p class="muted">Personal roadmap, portfolio review, pricing & pitch templates, and interview coaching.</p>
+              <ul class="muted" style="margin-top:10px">
+                <li>Bi-weekly 1:1 calls</li>
+                <li>Custom freelancing plan</li>
+                <li>Pitch & proposal templates</li>
+              </ul>
+            </div>
+
+            <div class="mentor-card">
+              <h3 style="margin-top:0">Group Cohort</h3>
+              <p class="muted">Weekly live Q&A, project reviews, accountability check-ins and real client project walkthroughs.</p>
+              <ul class="muted" style="margin-top:10px">
+                <li>Weekly live sessions</li>
+                <li>Community feedback</li>
+                <li>Job & client leads</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="button" href="#book">Apply for Mentorship</a>
+            <a class="button alt" href="https://wa.me/91XXXXXXXXXX" target="_blank">Message on WhatsApp</a>
+          </div>
+        </section>
+
+        <!-- PROJECTS / POSTS (from HTML5UP content) -->
+        <section id="projects" class="card" style="margin-top:18px">
+          <h2>Selected Projects</h2>
+          <div class="posts" style="margin-top:12px">
+            <article class="post">
+              <a href="https://github.com/chakravarthi-15/webdevelopment" target="_blank"><img class="image" src="images/web development 1.jpg" alt="Web development project"></a>
+              <div class="content">
+                <h3><a href="https://github.com/chakravarthi-15/webdevelopment" target="_blank">Web Development</a></h3>
+                <p class="muted">Custom websites tailored to brand voice using HTML, CSS & JavaScript — responsive and SEO-friendly.</p>
+                <p><a class="button alt" href="https://github.com/chakravarthi-15/webdevelopment" target="_blank">View on GitHub</a></p>
+              </div>
+            </article>
+
+            <article class="post">
+              <img class="image" src="images/python image 2.jpg" alt="Python project">
+              <div class="content">
+                <h3>Python Programming</h3>
+                <p class="muted">Automation scripts, data analysis, and custom solutions for small businesses.</p>
+                <p><a class="button alt" href="#">Learn more</a></p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section id="testimonials" class="card" style="margin-top:18px">
+          <h2>Student Success Stories</h2>
+          <div class="test-grid" style="margin-top:12px">
+            <div class="testimonial">
+              <strong>Deepika R — Hyderabad</strong>
+              <p class="muted">“I was a homemaker with zero technical background. After Milka's mentorship, I learned Canva & freelancing — now I earn ₹35,000/month from home!”</p>
+            </div>
+            <div class="testimonial">
+              <strong>Pooja S — Bengaluru</strong>
+              <p class="muted">“Practical teaching, fast results. I landed my first freelance client within 2 months.”</p>
+            </div>
+            <div class="testimonial">
+              <strong>Sneha M — Chennai</strong>
+              <p class="muted">“Milka is a true mentor. Her support changed my life.”</p>
+            </div>
+            <div class="testimonial">
+              <strong>Ravi K — Pune</strong>
+              <p class="muted">“Upskilled from testing to web dev, delivered 3 client websites and started earning part-time.”</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA strip -->
+        <div class="cta-strip">
+          <p style="margin:0;font-weight:700">Ready to transform your skills into income? Book a free strategy call to get a personalised roadmap.</p>
+          <div><a class="button" href="#book">Book Free Call</a></div>
+        </div>
+
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside>
+        <div class="card lead-card" id="book">
+          <h3 style="margin-top:0">Book a Free Strategy Call</h3>
+          <p class="muted">Discuss your goals, choose the best course, and get a customised learning path. Pricing shared on the call.</p>
+
+          <form class="lead-form" action="https://formsubmit.co/your-email@example.com" method="POST" onsubmit="alert('Thanks! We will contact you. Replace form action with your endpoint')">
+            <input type="hidden" name="_subject" value="New Website Lead">
+            <label class="muted">Full name</label>
+            <input required name="name" placeholder="Your full name">
+            <label class="muted">Phone / WhatsApp</label>
+            <input required name="phone" placeholder="+91 9XXXXXXXXX">
+            <label class="muted">Interested Course</label>
+            <select name="course">
+              <option>Video Editing</option>
+              <option>Meta Ads</option>
+              <option>Canva Design</option>
+              <option>Web Development</option>
+              <option>Automation Testing</option>
+              <option>Affiliate Marketing</option>
+              <option>Personal Mentorship</option>
+            </select>
+            <label class="muted">Preferred Language</label>
+            <select name="lang">
+              <option>English</option>
+              <option>Tamil</option>
+              <option>Kannada</option>
+              <option>Telugu</option>
+            </select>
+            <label class="muted">Message</label>
+            <textarea name="message" rows="3" placeholder="Tell me about your goals (optional)"></textarea>
+
+            <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+              <button class="button" type="submit">Book Call</button>
+              <a class="button alt" href="https://wa.me/91XXXXXXXXXX" target="_blank">Message on WhatsApp</a>
+            </div>
+          </form>
+
+          <div style="margin-top:12px" class="muted">Languages taught: Tamil • Kannada • Telugu • English</div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4 style="margin-top:0">Contact & Socials</h4>
+          <div class="socials" style="margin-top:8px">
+            <a href="https://www.instagram.com/milkachakravarthi/" class="muted">Instagram</a>
+            <a href="https://www.youtube.com/@UCX_u_YzZyV2hhoAWr9BaAJg" class="muted">YouTube</a>
+            <a href="https://www.facebook.com/milka.jennifer.1/" class="muted">Facebook</a>
+          </div>
+          <div style="margin-top:12px" class="muted">Founder, M&N Sparks • Trainer at Digital Billionaire</div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Contact / Footer (HTML5UP style) -->
+    <footer id="contact" class="card" style="margin-top:18px">
+      <section>
+        <form method="post" action="https://formsubmit.co/your-email@example.com" onsubmit="alert('Thanks! Your message has been sent — replace endpoint with your email form handler')">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <label for="name">Name</label><br>
+              <input type="text" name="name" id="name" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eef3fb">
+            </div>
+            <div>
+              <label for="email">Email</label><br>
+              <input type="text" name="email" id="email" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eef3fb">
+            </div>
+          </div>
+          <div style="margin-top:8px">
+            <label for="message">Message</label><br>
+            <textarea name="message" id="message" rows="4" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eef3fb"></textarea>
+          </div>
+          <div style="margin-top:10px">
+            <input type="submit" value="Send Message" class="button">
+            <a class="button alt" href="https://wa.me/91XXXXXXXXXX" style="margin-left:8px" target="_blank">Quick WhatsApp</a>
+          </div>
+        </form>
+      </section>
+
+      <section class="split contact" style="display:flex;flex-wrap:wrap;gap:24px;margin-top:18px">
+        <div style="min-width:180px">
+          <h3>Address</h3>
+          <p class="muted-strong">Bengaluru<br>India</p>
+        </div>
+        <div style="min-width:160px">
+          <h3>Phone</h3>
+          <p class="muted-strong"><a href="tel:+918297173591">+91 8297 173 591</a></p>
+        </div>
+        <div style="min-width:220px">
+          <h3>Email</h3>
+          <p class="muted-strong"><a href="mailto:lakkumilka0@gmail.com">lakkumilka0@gmail.com</a></p>
+        </div>
+        <div style="min-width:220px">
+          <h3>Social</h3>
+          <ul style="display:flex;gap:12px;list-style:none;padding:0;margin:0">
+            <li><a href="https://www.youtube.com/@UCX_u_YzZyV2hhoAWr9BaAJg">YouTube</a></li>
+            <li><a href="https://www.facebook.com/milka.jennifer.1/">Facebook</a></li>
+            <li><a href="https://www.instagram.com/milkachakravarthi/">Instagram</a></li>
+          </ul>
+        </div>
+      </section>
+    </footer>
+
+    <div style="text-align:center;margin-top:12px;color:var(--muted);font-size:13px">© <span id="year"></span> Milka Chakravarthi — Trainer at Digital Billionaire | Founder, M&N Sparks</div>
+  </div>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll for internal anchors
+    document.querySelectorAll('a.scrolly, a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(!href || href === "#") return;
+        if(href.startsWith('#')){
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+
+    // Small mobile-friendly menu toggle (if you want to add later)
+  </script>
+</body>
 </html>
